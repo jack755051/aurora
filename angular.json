@@ -7,7 +7,7 @@
       "projectType": "library",
       "root": "projects/toast",
       "sourceRoot": "projects/toast/src",
-      "prefix": "lib",
+      "prefix": "aurora-toast",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
@@ -45,7 +45,7 @@
       },
       "root": "projects/probatio",
       "sourceRoot": "projects/probatio/src",
-      "prefix": "app",
+      "prefix": "aurora-probatio",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
