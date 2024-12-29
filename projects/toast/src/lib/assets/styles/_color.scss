@@ -1,0 +1,46 @@
+// 主色定義 (HSL 格式)
+$toast-success: #00ab0e; // 綠色
+$toast-warning: #ffec1a; // 黃色
+$toast-failure: #f90202; // 紅色
+
+// 淺色色票 (調整 Lightness 增加亮度)
+$toast-success-light: #35d130;
+$toast-warning-light: #ffea04;
+$toast-failure-light: #ff3737;
+
+// 底色色票 (調整 Lightness 增加亮度)
+$toast-success-background: #35d130;
+$toast-warning-background: #fffcdf;
+$toast-failure-background: #ffdfdf;
+
+// 標準顏色映射
+$toast-colors: (
+  SUCCESS: $toast-success,
+  WARNING: $toast-warning,
+  FAILURE: $toast-failure,
+);
+// 淺色顏色映射
+$toast-light-colors: (
+  SUCCESS: $toast-success-light,
+  WARNING: $toast-warning-light,
+  FAILURE: $toast-failure-light,
+);
+// 底色色票映射
+$toast-background-colors: (
+  SUCCESS: $toast-success-background,
+  WARNING: $toast-warning-background,
+  FAILURE: $toast-failure-background,
+);
+
+// 混入函數
+@mixin toast-color($type) {
+  background-color: map-get($toast-colors, $type);
+}
+
+@mixin toast-light-color($type) {
+  background-color: map-get($toast-light-colors, $type);
+}
+
+@mixin toast-background($type) {
+  background-color: map-get($toast-light-colors, $type);
+}
