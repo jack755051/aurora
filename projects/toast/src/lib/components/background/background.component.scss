@@ -1,0 +1,21 @@
+:host {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 35vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* 控制每個項目的間距 */
+  gap: 1rem;
+  padding: 1.2rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  /* 確保在最上層 */
+  z-index: 1000;
+
+  > aurora-toast-item {
+    width: 100%; /* 子項目寬度跟隨父容器 */
+  }
+}
