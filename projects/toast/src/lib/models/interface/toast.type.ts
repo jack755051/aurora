@@ -1,6 +1,7 @@
 import { toastType } from '../enums/type.enum';
 
-export type toast = {
+export type Toast = {
+  id: string;
   message: string;
   type: toastType;
   duration?: number;
