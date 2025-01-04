@@ -1,14 +1,133 @@
+@use '../../assets/styles/color' as colors;
+@use '../../assets/styles/icon' as icons;
+
 :host {
-  display: flex;
-  > .decoration {
-  }
+  width: 100%;
+  height: 5rem;
 
-  > .icon {
-  }
+  > .toast-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.2rem 0.6rem 0.6rem 1.2rem;
+    gap: 1rem;
 
-  > .text {
-  }
+    .icon {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  > .close {
+      > .inner-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        background: no-repeat;
+        background-position: center;
+        position: relative;
+      }
+
+      > .inner-icon::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: no-repeat;
+        background-position: center;
+        filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.5));
+        z-index: 0;
+      }
+    }
+
+    > .decoration {
+      width: 3%;
+      height: 100%;
+      border-radius: 1.2rem 0rem 0rem 1.2rem;
+    }
+
+    > .text {
+      width: 60%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    > .close {
+      width: 5%;
+      height: 100%;
+      margin-left: auto;
+      padding: 0.5rem 0.5rem 0rem 0rem;
+      cursor: pointer;
+
+      > .close-btn {
+        width: 2rem;
+        height: 2rem;
+        background-image: icons.$btn-close;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    }
+
+    &.type-success {
+      background: colors.$toast-success-background;
+      > .icon {
+        background-color: colors.$toast-success-light;
+
+        > .inner-icon {
+          background-image: icons.$toast-icons-success;
+          background-color: colors.$toast-success;
+        }
+
+        > .inner-icon::after {
+          background-image: icons.$toast-icons-success;
+        }
+      }
+
+      > .decoration {
+        background-color: colors.$toast-success;
+      }
+    }
+    &.type-failure {
+      background: colors.$toast-failure-background;
+
+      > .icon {
+        background-color: colors.$toast-failure-light;
+        > .inner-icon {
+          background-color: colors.$toast-failure;
+          background-image: icons.$toast-icons-failure;
+        }
+        > .inner-icon::after {
+          background-image: icons.$toast-icons-failure;
+        }
+      }
+
+      > .decoration {
+        background-color: colors.$toast-failure;
+      }
+    }
+    &.type-warning {
+      background: colors.$toast-warning-background;
+
+      > .icon {
+        background-color: colors.$toast-warning-light;
+        > .inner-icon {
+          background-color: colors.$toast-warning;
+          background-image: icons.$toast-icons-warning;
+        }
+        > .inner-icon::after {
+          background-image: icons.$toast-icons-warning;
+        }
+      }
+
+      > .decoration {
+        background-color: colors.$toast-warning;
+      }
+    }
   }
 }

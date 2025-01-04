@@ -1,12 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { toastType } from '../../models/enums/type.enum';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'aurora-toast-item',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './item.component.html',
   styleUrl: './item.component.scss',
+  host: {
+    '[class]': 'setType', // 动态绑定宿主元素的类
+  },
 })
 export class ItemComponent implements OnInit {
   /** Toast ID */
@@ -26,6 +30,19 @@ export class ItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.startAutoClose();
+  }
+
+  get setType(): string {
+    switch (this.type) {
+      case toastType.SUCCESS:
+        return 'type-success';
+      case toastType.FAILURE:
+        return 'type-failure';
+      case toastType.WARNING:
+        return 'type-warning';
+      default:
+        return 'success';
+    }
   }
 
   //TODO: 透過設定的時間來自動關閉通知
