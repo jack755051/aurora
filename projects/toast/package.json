@@ -11,5 +11,8 @@
   "peerDependencie": {
     "uuid": "^11.0.3"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@types/uuid": "^10.0.0"
+  }
 }
