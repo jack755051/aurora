@@ -1,17 +1,17 @@
 // 主色定義 (HSL 格式)
-$toast-success: #00ab0e; // 綠色
-$toast-warning: #ffec1a; // 黃色
-$toast-failure: #f90202; // 紅色
+$toast-success: hsl(125, 100, 34, 100%); // 綠色
+$toast-warning: hsl(55, 100, 53, 100%); // 黃色
+$toast-failure: hsl(0, 99, 49, 100%); // 紅色
 
 // 淺色色票 (調整 Lightness 增加亮度)
-$toast-success-light: #35d130;
-$toast-warning-light: #ffea04;
-$toast-failure-light: #ff3737;
+$toast-success-light: hsl(118, 64, 50, 0.33);
+$toast-warning-light: hsl(55, 100, 51, 0.33);
+$toast-failure-light: hsl(0, 100, 61, 0.33);
 
 // 底色色票 (調整 Lightness 增加亮度)
-$toast-success-background: #35d130;
-$toast-warning-background: #fffcdf;
-$toast-failure-background: #ffdfdf;
+$toast-success-background: hsl(142, 99, 94, 100%);
+$toast-warning-background: hsl(55, 99, 94, 100%);
+$toast-failure-background: hsl(0, 99, 94, 100%);
 
 // 標準顏色映射
 $toast-colors: (
