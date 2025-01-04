@@ -1,7 +1,7 @@
 :host {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 35vw;
   height: 100vh;
   display: flex;
@@ -10,12 +10,10 @@
   /* 控制每個項目的間距 */
   gap: 1rem;
   padding: 1.2rem 1rem;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.2); /* 调整背景色增加透明度使背景更明显 */
+  backdrop-filter: blur(10px); /* 增加模糊效果 */
+  border-left: 1px solid rgba(255, 255, 255, 0.3); /* 添加边界线增加分隔感 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加阴影来给元素一个浮起的感觉 */
   /* 確保在最上層 */
   z-index: 1000;
-
-  > aurora-toast-item {
-    width: 100%; /* 子項目寬度跟隨父容器 */
-  }
 }
